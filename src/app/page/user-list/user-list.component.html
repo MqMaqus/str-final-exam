@@ -55,7 +55,15 @@
               <button [routerLink]="['user/' + user.id]" class="btn btn-info">
                 <i class="fa fa-pencil"></i>
               </button>
-              <button class="btn btn-danger" (click)="onDelete(user)">
+              <button
+                class="btn btn-danger"
+                mwlConfirmationPopover
+                [popoverTitle]="'Confirm user delete'"
+                [popoverMessage]="'Are you sure you want to delete this user?'"
+                placement="left"
+                (confirm)="onDelete(user)"
+                (cancel)="cancelClicked = true"
+              >
                 <i class="fa fa-trash"></i>
               </button>
             </div>

@@ -48,10 +48,7 @@ export class UserListComponent implements OnInit {
 
   onDelete(user: User): void {
     this.userToDelete = user;
-  }
-
-  deleteItem(): void {
-    this.userService.remove(this.userToDelete).subscribe(
+    this.userService.remove(user).subscribe(
       () => {
         this.userService.getAll();
       }

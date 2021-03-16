@@ -9,6 +9,7 @@ import { UserListComponent } from './page/user-list/user-list.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SorterPipe } from './pipes/sorter.pipe';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SorterPipe } from './pipes/sorter.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ConfirmationPopoverModule.forRoot({ confirmButtonType: 'danger'}),
   ],
   providers: [],
   bootstrap: [AppComponent]
